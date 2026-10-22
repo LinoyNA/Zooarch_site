@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ZooArchaeology for Kids by Dr. Linoy Namdar</title>
+<title>ZooArchaeology for Kids | Archaeology Books for Children Ages 6–16</title>
 <meta name="author" content="Dr. Linoy Namdar">
 <meta name="description" content="ZooArchaeology for Kids – educational children's books about archaeology for ages 6–16. Written by Dr. Linoy Namdar, a real zooarchaeologist. Explore ancient humans, animals, bones & excavations.">
 <meta name="keywords" content="archaeology books for kids, children's archaeology book, zooarchaeology for kids, educational books about ancient animals, archaeology for children, hunter gatherer book kids, neolithic revolution children, kids science books, animal bones archaeology, educational gift for kids, museum gift shop book">
@@ -73,6 +73,49 @@
       "audience": { "@type": "PeopleAudience", "suggestedMinAge": 6, "suggestedMaxAge": 16 },
       "about": "The Neolithic transition to farming and animal domestication, explored through bones and skeletons.",
       "publisher": { "@type": "Organization", "name": "N.A Publishing" }
+    },
+    {
+      "@type": "Product",
+      "name": "ZooArchaeology for Kids — Educational Archaeology Book Series",
+      "description": "A two-book series introducing children ages 6–16 to zooarchaeology — ancient humans and animals studied through bones and skeletons. Written and illustrated by zooarchaeologist Dr. Linoy Namdar.",
+      "image": "https://zooarchforkids.com/images/book-covers-both.png",
+      "brand": { "@type": "Brand", "name": "ZooArchaeology for Kids" },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "reviewCount": "4"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Alex" },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "name": "Great books as gift",
+          "reviewBody": "I ordered these nice books as a present and it arrived fast and was well received. Recommended!"
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Sapir" },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "name": "Absolutely amazing",
+          "reviewBody": "The books are beautifully illustrated and informative for children's and adults as one. The perfect gift for any archeology enthusiast. Quick delivery, very recommended."
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Atar" },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "name": "Great books for curious kids!",
+          "reviewBody": "I got these books for my son, even though he's a bit young for them, I know he will LOVE them when he's a bit older. They're very informative but also cute and fun, perfect for kids who want to learn more about animals and their history!"
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Nadegda" },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "name": "Beautiful books",
+          "reviewBody": "These books are an amazing gift. I ordered it for my granddaughter, who loves archaeology. I had to buy another copy for my friend's grandsons, and they enjoy it a lot."
+        }
+      ]
     }
   ]
 }
@@ -297,6 +340,21 @@
     position:relative;z-index:2;font-family:'Amatic SC',cursive;font-weight:700;
     font-size:1.5rem;line-height:1.05;color:var(--clay-deep);padding:18px;
   }
+
+  /* ---------- FAQ ---------- */
+  .faq{max-width:760px;margin:0 auto}
+  .faq details{
+    background:var(--cream);border:1px solid var(--line);border-radius:14px;
+    padding:2px 22px;margin-bottom:14px;box-shadow:0 4px 14px var(--shadow);
+  }
+  .faq summary{
+    font-family:'Amatic SC',cursive;font-weight:700;font-size:1.55rem;color:var(--clay-deep);
+    cursor:pointer;padding:15px 0;list-style:none;display:flex;justify-content:space-between;gap:14px;
+  }
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:'+';color:var(--clay);font-size:1.4rem;line-height:1}
+  .faq details[open] summary::after{content:'\2013'}
+  .faq .fa{color:var(--brown);padding:0 0 16px;margin:0}
 
   /* ---------- Contact ---------- */
   .contact-cta{display:flex;justify-content:center}
@@ -554,8 +612,50 @@
   </div>
 </section>
 
+<!-- ================= FAQ ================= -->
+<section id="faq" class="band alt">
+  <div class="wrap">
+    <h2 class="sec-title">Frequently Asked Questions</h2>
+    <div class="faq">
+      <details>
+        <summary>What is ZooArchaeology for Kids?</summary>
+        <p class="fa">ZooArchaeology for Kids is a children's book series that introduces young readers ages 6–16 to zooarchaeology — the study of ancient humans and animals through the bones found in archaeological excavations.</p>
+      </details>
+      <details>
+        <summary>What age are the books for?</summary>
+        <p class="fa">The books are designed for curious children ages 6–16, with vivid illustrations, anatomical atlases, and activity pages that make real science accessible and fun.</p>
+      </details>
+      <details>
+        <summary>What do the books cover?</summary>
+        <p class="fa">Book I: Hunter-Gatherers and Wild Species explores prehistoric times and Ice Age animals. Book II: The Neolithic Revolution uncovers the transition to farming and animal domestication.</p>
+      </details>
+      <details>
+        <summary>Who wrote the books?</summary>
+        <p class="fa">The books were written and designed by Dr. Linoy Namdar, a real zooarchaeologist and research fellow at Eötvös Loránd University (ELTE), Hungary.</p>
+      </details>
+      <details>
+        <summary>How can I order the books?</summary>
+        <p class="fa">You can order directly by email at na.zooarch@gmail.com using the "Contact me" button on this page. The books are also available in selected museum shops.</p>
+      </details>
+    </div>
+  </div>
+</section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"What is ZooArchaeology for Kids?","acceptedAnswer":{"@type":"Answer","text":"ZooArchaeology for Kids is a children's book series that introduces young readers ages 6–16 to zooarchaeology — the study of ancient humans and animals through the bones found in archaeological excavations."}},
+    {"@type":"Question","name":"What age are the books for?","acceptedAnswer":{"@type":"Answer","text":"The books are designed for curious children ages 6–16, with vivid illustrations, anatomical atlases, and activity pages that make real science accessible and fun."}},
+    {"@type":"Question","name":"What do the books cover?","acceptedAnswer":{"@type":"Answer","text":"Book I: Hunter-Gatherers and Wild Species explores prehistoric times and Ice Age animals. Book II: The Neolithic Revolution uncovers the transition to farming and animal domestication."}},
+    {"@type":"Question","name":"Who wrote the books?","acceptedAnswer":{"@type":"Answer","text":"The books were written and designed by Dr. Linoy Namdar, a real zooarchaeologist and research fellow at Eötvös Loránd University (ELTE), Hungary."}},
+    {"@type":"Question","name":"How can I order the books?","acceptedAnswer":{"@type":"Answer","text":"You can order directly by email at na.zooarch@gmail.com using the Contact me button on this page. The books are also available in selected museum shops."}}
+  ]
+}
+</script>
+
 <!-- ================= CONTACT / ORDER ================= -->
-<section id="contact" class="band alt">
+<section id="contact" class="band">
   <div class="wrap">
     <h2 class="sec-title">Contact me to order the books now!</h2>
     <div class="contact-cta">
@@ -569,7 +669,7 @@
 </section>
 
 <!-- ================= BLOG ================= -->
-<section id="blog" class="band">
+<section id="blog" class="band alt">
   <div class="wrap">
     <h2 class="sec-title">academic articles for kids</h2>
     <div class="blog-grid">
