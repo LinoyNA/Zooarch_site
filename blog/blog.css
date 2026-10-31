@@ -53,3 +53,18 @@ h1,h2,h3{font-family:'Amatic SC',cursive;font-weight:700;line-height:1.05;letter
   .post{padding:28px 18px 20px}
   .post p{font-size:1.02rem}
 }
+
+/* ---------- End-of-post book CTA ---------- */
+.post-cta-box{
+  margin-top:36px;padding:28px 22px;text-align:center;
+  background:var(--sand-deep);border-radius:22px;box-shadow:0 10px 26px var(--shadow);
+}
+.post-cta-box .cta-covers{display:block;max-width:300px;margin:0 auto 16px}
+.post-cta-box .cta-covers img{width:100%;border-radius:12px;box-shadow:0 8px 20px var(--shadow)}
+.post-cta-box h3{font-size:2rem;color:var(--clay-deep);margin:0 0 6px}
+.post-cta-box p{font-size:1rem;color:var(--ink);max-width:470px;margin:0 auto 18px}
+.post-cta-box .cta-btn{
+  display:inline-flex;align-items:center;gap:8px;background:var(--clay);color:#fff;
+  font-weight:800;padding:13px 28px;border-radius:999px;box-shadow:0 8px 20px var(--shadow);
+}
+.post-cta-box .cta-btn:hover{background:var(--clay-deep)}
