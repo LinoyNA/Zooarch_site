@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thank you! · ZooArchaeology for Kids</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%239c3d1a'/><circle cx='16' cy='17' r='7' fill='none' stroke='%23f5deb3' stroke-width='2.4'/></svg>">
+<style>
+  @font-face{font-family:'Amatic SC';font-weight:700;font-display:swap;src:url(fonts/amatic-700.woff2) format('woff2')}
+  @font-face{font-family:'Barlow';font-weight:400;font-display:swap;src:url(fonts/barlow-400.woff2) format('woff2')}
+  @font-face{font-family:'Barlow';font-weight:700;font-display:swap;src:url(fonts/barlow-700.woff2) format('woff2')}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Barlow',system-ui,sans-serif;background:#9c3d1a;color:#fff;line-height:1.7;
+    min-height:100vh;display:flex;align-items:center;justify-content:center;padding:30px;text-align:center}
+  .card{max-width:620px;background:#fffdf6;color:#5a2a12;border-radius:24px;padding:48px 40px;box-shadow:0 26px 60px rgba(0,0,0,.4)}
+  .check{width:84px;height:84px;margin:0 auto 18px;border-radius:50%;background:#9c3d1a;display:flex;align-items:center;justify-content:center}
+  .check svg{width:44px;height:44px;fill:#f5deb3}
+  h1{font-family:'Amatic SC',cursive;font-weight:700;font-size:clamp(2.8rem,8vw,4.2rem);color:#9c3d1a;line-height:.95;margin-bottom:10px}
+  p{font-size:1.05rem;margin-bottom:12px}
+  .ref{font-size:.9rem;color:#8a5a2e;margin:14px 0 20px}
+  a.btn{display:inline-block;background:#9c3d1a;color:#fff;font-weight:700;text-transform:uppercase;letter-spacing:1px;
+    font-size:.82rem;padding:13px 28px;border-radius:999px;text-decoration:none;margin-top:6px}
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="check"><svg viewBox="0 0 24 24"><path d="M9 16.2l-3.5-3.5L4 14.2l5 5 11-11-1.5-1.5z"/></svg></div>
+    <h1>Thank you for your order!</h1>
+    <p>Your set of <strong>ZooArchaeology for Kids</strong> (both books + a gift) is on its way.</p>
+    <p>Your order will be shipped within <strong>3 business days</strong>. You'll receive an email with a <strong>tracking number</strong> as soon as it ships.</p>
+    <p class="ref" id="ref"></p>
+    <a class="btn" href="index.html">Back to the site</a>
+  </div>
+  <script>
+    try{ const o=JSON.parse(sessionStorage.getItem("zooOrder")||"{}");
+      if(o.id){ document.getElementById("ref").textContent="Order reference: "+o.id+(o.total?(" · Total paid €"+Number(o.total).toFixed(2)):""); } }catch(e){}
+  </script>
+</body>
+</html>

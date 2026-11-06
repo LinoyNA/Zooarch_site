@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script>document.documentElement.classList.add('js');</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buy the Books · ZooArchaeology for Kids</title>
+<meta name="description" content="Buy the complete ZooArchaeology for Kids series: both hardcover books (ages 6–16) with a free gift in every order. €40, secure PayPal checkout, worldwide shipping.">
+<link rel="canonical" href="https://zooarchforkids.com/product.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%239c3d1a'/><circle cx='16' cy='17' r='7' fill='none' stroke='%23f5deb3' stroke-width='2.4'/></svg>">
+<style>
+  @font-face{font-family:'Amatic SC';font-weight:700;font-display:swap;src:url(fonts/amatic-700.woff2) format('woff2')}
+  @font-face{font-family:'Barlow';font-weight:400;font-display:swap;src:url(fonts/barlow-400.woff2) format('woff2')}
+  @font-face{font-family:'Barlow';font-weight:600;font-display:swap;src:url(fonts/barlow-600.woff2) format('woff2')}
+  @font-face{font-family:'Barlow';font-weight:700;font-display:swap;src:url(fonts/barlow-700.woff2) format('woff2')}
+  :root{
+    --terra:#9c3d1a; --terra-deep:#86330f; --wheat:#f5deb3; --wheat-soft:#fffdf6;
+    --ink:#ffffff; --ink-dark:#5a2a12; --line:rgba(245,222,179,.22); --shadow:rgba(0,0,0,.33);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Barlow',system-ui,sans-serif;background:var(--terra);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{font-family:'Amatic SC',cursive;font-weight:700;line-height:1;letter-spacing:.5px}
+  a{color:var(--wheat)}
+  img{display:block;max-width:100%}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+  .topbar{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;
+    padding:14px 20px;background:linear-gradient(180deg,rgba(156,61,26,.97),rgba(156,61,26,.86));backdrop-filter:blur(6px)}
+  .topbar .brand{font-family:'Amatic SC';font-weight:700;font-size:1.5rem;color:#fff}
+  .topbar a.home{font-weight:700;font-size:.8rem;text-transform:uppercase;letter-spacing:1.3px;color:var(--wheat)}
+
+  .hero{text-align:center;padding:46px 0 10px}
+  .hero h1{font-size:clamp(3.2rem,8vw,5.6rem);color:#fff}
+  .hero .sub{color:var(--wheat);font-weight:600;letter-spacing:1px;text-transform:uppercase;font-size:.9rem;margin-top:6px}
+
+  /* covers above everything */
+  .covers{margin:24px auto 8px;max-width:620px}
+  .covers img{width:100%;border-radius:16px;box-shadow:0 22px 50px var(--shadow)}
+
+  .layout{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;margin-top:30px;align-items:start}
+  @media(max-width:860px){.layout{grid-template-columns:1fr;gap:28px}}
+
+  /* interior gallery */
+  .gallery h2{font-size:2.4rem;color:#fff;margin-bottom:14px}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  .grid img{width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:12px;box-shadow:0 10px 24px var(--shadow)}
+  .specs{margin-top:26px;background:var(--wheat);color:var(--ink-dark);border-radius:16px;padding:22px 24px;box-shadow:0 14px 34px var(--shadow)}
+  .specs h3{font-size:2rem;color:var(--terra);margin-bottom:10px}
+  .specs ul{list-style:none;display:grid;gap:9px}
+  .specs li{display:flex;gap:10px;font-size:.98rem;align-items:flex-start}
+  .specs li b{color:var(--terra-deep)}
+  .specs li::before{content:"";flex:0 0 9px;height:9px;margin-top:7px;border-radius:50%;background:var(--terra)}
+
+  /* buy panel */
+  .buy{background:var(--wheat-soft);color:var(--ink-dark);border-radius:20px;padding:26px 26px 30px;
+    box-shadow:0 22px 56px var(--shadow);position:sticky;top:76px}
+  .buy h2{font-size:2.5rem;color:var(--terra);line-height:.95}
+  .buy .price-tag{font-weight:800;font-size:1.1rem;color:var(--terra-deep);margin:4px 0 2px}
+  .buy .gift{display:inline-block;background:var(--terra);color:#fff;font-weight:700;font-size:.78rem;
+    text-transform:uppercase;letter-spacing:1px;padding:5px 12px;border-radius:999px;margin-top:8px}
+  .buy label{display:block;font-weight:700;font-size:.82rem;color:var(--terra-deep);margin:14px 0 5px;text-transform:uppercase;letter-spacing:.8px}
+  .buy input,.buy select,.buy textarea{width:100%;font-family:inherit;font-size:.95rem;color:#3a2012;
+    background:#fff;border:1.5px solid #e4cdb0;border-radius:10px;padding:10px 12px}
+  .buy input:focus,.buy select:focus,.buy textarea:focus{outline:none;border-color:var(--terra)}
+  .buy .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+
+  .qty{display:flex;align-items:center;gap:0;width:fit-content;border:1.5px solid #e4cdb0;border-radius:10px;overflow:hidden;background:#fff}
+  .qty button{width:44px;height:44px;border:0;background:var(--wheat);color:var(--terra-deep);font-size:1.4rem;font-weight:700;cursor:pointer}
+  .qty button:hover{background:#efd7a8}
+  .qty input{width:54px;text-align:center;border:0;border-left:1.5px solid #e4cdb0;border-right:1.5px solid #e4cdb0;border-radius:0;font-weight:700;font-size:1.05rem}
+
+  .summary{margin-top:18px;border-top:1.5px dashed #e0c9a8;padding-top:14px;font-size:.98rem}
+  .summary .line{display:flex;justify-content:space-between;padding:3px 0}
+  .summary .ship-note{font-size:.72rem;color:#8a6a4f;line-height:1.4;margin-top:2px}
+  .summary .total{display:flex;justify-content:space-between;font-weight:800;font-size:1.25rem;color:var(--terra);
+    border-top:1.5px solid #e4cdb0;margin-top:8px;padding-top:10px}
+
+  /* PayPal area: gated (blurred/inactive) until the form is valid */
+  .paybox{position:relative;margin-top:18px;min-height:52px}
+  #paypal-buttons{transition:filter .25s ease,opacity .25s ease}
+  .paybox.locked #paypal-buttons{filter:blur(3px) grayscale(.5);opacity:.5;pointer-events:none}
+  .paybox .gate{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;
+    background:rgba(255,253,246,.55);border:1.5px dashed #d8bd94;border-radius:12px;color:#8a5a2e;font-weight:700;font-size:.85rem;padding:10px}
+  .paybox:not(.locked) .gate{display:none}
+  .payhint{font-size:.74rem;color:#8a6a4f;margin-top:8px;text-align:center}
+  .paypal-only{display:flex;align-items:center;justify-content:center;gap:7px;margin-top:10px;font-size:.78rem;color:#8a6a4f}
+
+  footer{background:var(--terra-deep);color:#f4e9dc;text-align:center;padding:30px 20px;margin-top:50px;font-size:.85rem}
+  footer a{color:var(--wheat)}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span class="brand">ZooArchaeology for Kids</span>
+  <a class="home" href="index.html">← Back to site</a>
+</div>
+
+<div class="wrap">
+  <div class="hero">
+    <h1>Get the Complete Series</h1>
+    <div class="sub">Both books · a gift in every order</div>
+  </div>
+
+  <!-- covers above everything -->
+  <figure class="covers">
+    <img src="images/book-covers-both.jpg" alt="Both ZooArchaeology for Kids book covers: Hunter-Gatherers and Wild Species, and The Neolithic Revolution">
+  </figure>
+
+  <div class="layout">
+    <!-- left: interior pages + specs -->
+    <div class="gallery">
+      <h2>A peek inside</h2>
+      <div class="grid">
+        <img src="images/book-hunter-archer.jpg" alt="Interior page: a hunter with a bow">
+        <img src="images/book-mammoth.jpg" alt="Interior page: a woolly mammoth illustration">
+        <img src="images/book-mammoth-skeleton.jpg" alt="Interior page: a woolly mammoth skeleton">
+        <img src="images/book-deer-skeleton.jpg" alt="Interior page: a deer skeleton diagram">
+        <img src="images/book-goat-skeleton.jpg" alt="Interior page: goat and sheep skeleton diagrams">
+        <img src="images/book-goat-milk.jpg" alt="Interior page: a goat being milked">
+      </div>
+
+      <div class="specs">
+        <h3>About the books</h3>
+        <ul>
+          <li><span><b>Format:</b> Hardcover</span></li>
+          <li><span><b>Language:</b> English</span></li>
+          <li><span><b>Ages:</b> 6–16</span></li>
+          <li><span><b>Pages:</b> 44 pages per book</span></li>
+          <li><span><b>A gift</b> included with every book</span></li>
+          <li><span><b>Activity pages</b> included</span></li>
+          <li><span><b>Learning atlas</b> of the bones of the skeleton (learn each bone's name)</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- right: buy panel -->
+    <div class="buy">
+      <h2>The Complete Series</h2>
+      <div class="price-tag">€40 per set (both books)</div>
+      <span class="gift">Free gift in every order</span>
+
+      <label for="qty">How many sets?</label>
+      <div class="qty">
+        <button type="button" id="minus" aria-label="Decrease quantity">−</button>
+        <input id="qty" type="number" min="1" max="99" value="1" inputmode="numeric" aria-label="Number of sets">
+        <button type="button" id="plus" aria-label="Increase quantity">+</button>
+      </div>
+
+      <label for="fullname">Full name</label>
+      <input id="fullname" type="text" autocomplete="name" placeholder="Your name">
+
+      <label for="country">Destination country</label>
+      <select id="country">
+        <option value="">Select a country…</option>
+        <option value="HU">Hungary</option>
+        <optgroup label="Europe (EU & neighbours)">
+          <option value="AT">Austria</option><option value="SK">Slovakia</option><option value="RO">Romania</option>
+          <option value="HR">Croatia</option><option value="SI">Slovenia</option><option value="RS">Serbia</option>
+          <option value="CZ">Czechia</option><option value="PL">Poland</option><option value="DE">Germany</option>
+          <option value="NL">Netherlands</option><option value="BE">Belgium</option><option value="FR">France</option>
+          <option value="IT">Italy</option><option value="ES">Spain</option><option value="PT">Portugal</option>
+          <option value="GR">Greece</option><option value="SE">Sweden</option><option value="DK">Denmark</option>
+          <option value="FI">Finland</option><option value="IE">Ireland</option><option value="GB">United Kingdom</option>
+          <option value="CH">Switzerland</option><option value="NO">Norway</option>
+        </optgroup>
+        <optgroup label="North America">
+          <option value="US">United States</option><option value="CA">Canada</option>
+        </optgroup>
+        <optgroup label="Rest of the world">
+          <option value="IL">Israel</option><option value="AU">Australia</option><option value="NZ">New Zealand</option>
+          <option value="JP">Japan</option><option value="SG">Singapore</option><option value="AE">UAE</option>
+          <option value="ZA">South Africa</option><option value="BR">Brazil</option>
+          <option value="OTHER">Other country</option>
+        </optgroup>
+      </select>
+
+      <div class="row2" style="margin-top:0">
+        <div><label for="city">City</label><input id="city" type="text" autocomplete="address-level2"></div>
+        <div><label for="zip">Postal code</label><input id="zip" type="text" autocomplete="postal-code"></div>
+      </div>
+
+      <label for="address">Shipping address</label>
+      <input id="address" type="text" autocomplete="street-address" placeholder="Street, number, apartment">
+
+      <label for="notes">Notes (optional)</label>
+      <textarea id="notes" rows="2" placeholder="Anything we should know?"></textarea>
+
+      <div class="summary">
+        <div class="line"><span id="itemsLabel">1 set × €40</span><span id="itemsTotal">€40.00</span></div>
+        <div class="line"><span>Shipping</span><span id="shipTotal">—</span></div>
+        <div class="ship-note">shipping is calculated by destination and number of sets once you choose your country</div>
+        <div class="total"><span>Total</span><span id="grandTotal">€40.00</span></div>
+      </div>
+
+      <div class="paybox locked" id="paybox">
+        <div id="paypal-buttons"></div>
+        <div class="gate">Fill in your name, country and address to pay</div>
+      </div>
+      <div class="paypal-only">🔒 Secure checkout with PayPal only</div>
+      <div class="payhint">You will be charged the total above (sets + shipping).</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  © 2025 by N.A Publishing · <a href="privacy.html">Privacy &amp; Shipping</a> · <a href="index.html">Home</a>
+</footer>
+
+<!-- ============ CONFIG: replace the two placeholders below ============ -->
+<script>
+  // 1) Your PayPal *Client ID* (from developer.paypal.com, live) — account linoyn6@gmail.com
+  const PAYPAL_CLIENT_ID = "YOUR_PAYPAL_CLIENT_ID";
+  // 2) Your Web3Forms access key (free at web3forms.com) — sends the order to na.zooarch@gmail.com
+  const WEB3FORMS_KEY = "YOUR_WEB3FORMS_ACCESS_KEY";
+  const ORDER_EMAIL = "na.zooarch@gmail.com";
+
+  // ---- Shipping rates (EUR). Editable. rate[n] = price for n sets; beyond 4 adds perExtra ----
+  const SET_PRICE = 40;
+  const ZONES = {
+    HU:   {name:"Hungary",            rate:[0, 4,  5,  6,  7],  perExtra:1.5},
+    EU1:  {name:"Europe (neighbours)",rate:[0, 9,  11, 14, 17], perExtra:3},
+    EU2:  {name:"Europe",             rate:[0, 13, 16, 20, 24], perExtra:4},
+    NA:   {name:"North America",      rate:[0, 22, 30, 38, 46], perExtra:8},
+    WORLD:{name:"Rest of the world",  rate:[0, 25, 34, 44, 54], perExtra:9}
+  };
+  const COUNTRY_ZONE = {
+    HU:"HU",
+    AT:"EU1",SK:"EU1",RO:"EU1",HR:"EU1",SI:"EU1",RS:"EU1",CZ:"EU1",PL:"EU1",DE:"EU1",
+    NL:"EU2",BE:"EU2",FR:"EU2",IT:"EU2",ES:"EU2",PT:"EU2",GR:"EU2",SE:"EU2",DK:"EU2",
+    FI:"EU2",IE:"EU2",GB:"EU2",CH:"EU2",NO:"EU2",
+    US:"NA",CA:"NA"
+    // everything else falls through to WORLD
+  };
+
+  const $ = id => document.getElementById(id);
+  let shipping = null;
+
+  function zoneFor(c){ if(!c) return null; return ZONES[COUNTRY_ZONE[c] || "WORLD"]; }
+  function shipCost(zone, sets){
+    if(!zone) return null;
+    const t = Math.min(sets, 4);
+    let cost = zone.rate[t];
+    if(sets > 4) cost += (sets - 4) * zone.perExtra;
+    return cost;
+  }
+  function recalc(){
+    const sets = Math.max(1, parseInt($("qty").value||"1",10));
+    const items = sets * SET_PRICE;
+    $("itemsLabel").textContent = sets + (sets>1?" sets":" set") + " × €40";
+    $("itemsTotal").textContent = "€"+items.toFixed(2);
+    const zone = zoneFor($("country").value);
+    shipping = shipCost(zone, sets);
+    if(shipping===null){ $("shipTotal").textContent="—"; $("grandTotal").textContent="€"+items.toFixed(2); }
+    else{ $("shipTotal").textContent="€"+shipping.toFixed(2); $("grandTotal").textContent="€"+(items+shipping).toFixed(2); }
+    gateCheck();
+  }
+  function formValid(){
+    return $("fullname").value.trim() && $("country").value && $("city").value.trim()
+        && $("zip").value.trim() && $("address").value.trim() && shipping!==null;
+  }
+  function gateCheck(){ $("paybox").classList.toggle("locked", !formValid()); }
+  function orderTotal(){
+    const sets = Math.max(1, parseInt($("qty").value||"1",10));
+    return { sets, items:sets*SET_PRICE, shipping:shipping||0, total:sets*SET_PRICE + (shipping||0) };
+  }
+
+  // qty +/- and live recalc
+  $("minus").onclick = ()=>{ $("qty").value = Math.max(1,(parseInt($("qty").value||"1",10)-1)); recalc(); };
+  $("plus").onclick  = ()=>{ $("qty").value = Math.min(99,(parseInt($("qty").value||"1",10)+1)); recalc(); };
+  ["qty","country","fullname","city","zip","address","notes"].forEach(id=> $(id).addEventListener("input",recalc));
+  recalc();
+
+  // send the order details to na.zooarch@gmail.com via Web3Forms
+  async function emailOrder(o, paypalId){
+    if(WEB3FORMS_KEY.startsWith("YOUR_")) return; // not configured yet
+    const body = {
+      access_key: WEB3FORMS_KEY,
+      subject: "New order – ZooArchaeology for Kids ("+o.sets+" set"+(o.sets>1?"s":"")+")",
+      from_name: "ZooArchaeology shop",
+      to: ORDER_EMAIL,
+      Order_ID: paypalId,
+      Name: $("fullname").value,
+      Sets: o.sets,
+      Country: $("country").options[$("country").selectedIndex].text,
+      City: $("city").value,
+      Postal_code: $("zip").value,
+      Address: $("address").value,
+      Notes: $("notes").value || "—",
+      Items: "€"+o.items.toFixed(2),
+      Shipping: "€"+o.shipping.toFixed(2),
+      Total_paid: "€"+o.total.toFixed(2)
+    };
+    try{ await fetch("https://api.web3forms.com/submit",{method:"POST",
+      headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(body)});}catch(e){}
+  }
+
+  // load PayPal SDK and render buttons
+  (function loadPaypal(){
+    if(PAYPAL_CLIENT_ID.startsWith("YOUR_")){
+      $("paypal-buttons").innerHTML =
+        '<div style="background:#ffd79e;color:#7a2e10;border-radius:10px;padding:12px;text-align:center;font-weight:700;font-size:.85rem">PayPal button appears here once your Client ID is added</div>';
+      return;
+    }
+    const s=document.createElement("script");
+    s.src="https://www.paypal.com/sdk/js?client-id="+PAYPAL_CLIENT_ID+"&currency=EUR&intent=capture";
+    s.onload=renderButtons; document.head.appendChild(s);
+  })();
+  function renderButtons(){
+    paypal.Buttons({
+      style:{color:"gold",shape:"pill",label:"paypal",height:46},
+      createOrder:(data,actions)=>{
+        const o=orderTotal();
+        return actions.order.create({
+          purchase_units:[{
+            amount:{ value:o.total.toFixed(2), currency_code:"EUR",
+              breakdown:{ item_total:{value:o.items.toFixed(2),currency_code:"EUR"},
+                          shipping:{value:o.shipping.toFixed(2),currency_code:"EUR"} } },
+            description:"ZooArchaeology for Kids – "+o.sets+" set(s), both books + gift",
+            custom_id:$("fullname").value
+          }],
+          application_context:{ shipping_preference:"NO_SHIPPING" }
+        });
+      },
+      onApprove:async(data,actions)=>{
+        const det=await actions.order.capture();
+        await emailOrder(orderTotal(), det.id);
+        sessionStorage.setItem("zooOrder", JSON.stringify({id:det.id, ...orderTotal(), name:$("fullname").value}));
+        window.location.href="thankyou.html";
+      }
+    }).render("#paypal-buttons");
+  }
+</script>
+</body>
+</html>
