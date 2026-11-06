@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>document.documentElement.classList.add('js');</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ZooArchaeology for Kids | Archaeology Books for Children Ages 6–16</title>
@@ -83,7 +84,7 @@
       "@type": "Product",
       "name": "ZooArchaeology for Kids — Educational Archaeology Book Series",
       "description": "A two-book series introducing children ages 6–16 to zooarchaeology — ancient humans and animals studied through bones and skeletons. Written and illustrated by zooarchaeologist Dr. Linoy Namdar.",
-      "image": "https://zooarchforkids.com/images/book-covers-both.png",
+      "image": "https://zooarchforkids.com/images/book-covers-both.jpg",
       "brand": { "@type": "Brand", "name": "ZooArchaeology for Kids" },
       "aggregateRating": {
         "@type": "AggregateRating",
@@ -126,10 +127,29 @@
 }
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="scrollcraft.css">
 <style>
+@font-face{font-family:'Amatic SC';font-weight:700;font-display:swap;src:url(fonts/amatic-700.woff2) format('woff2')}
+@font-face{font-family:'Barlow';font-weight:400;font-display:swap;src:url(fonts/barlow-400.woff2) format('woff2')}
+@font-face{font-family:'Barlow';font-weight:500;font-display:swap;src:url(fonts/barlow-500.woff2) format('woff2')}
+@font-face{font-family:'Barlow';font-weight:600;font-display:swap;src:url(fonts/barlow-600.woff2) format('woff2')}
+@font-face{font-family:'Barlow';font-weight:700;font-display:swap;src:url(fonts/barlow-700.woff2) format('woff2')}
+
+/* brand tokens for the scroll engine (focus ring, selection, reveals) */
+:root{--sc-canvas:#fbf4f0;--sc-surface:#ffffff;--sc-ink:#3d2318;--sc-ink-soft:#87361d;--sc-accent:#87361d;--sc-accent-ink:#ffffff;--sc-font-display:'Amatic SC',cursive;--sc-font-text:'Barlow',system-ui,sans-serif}
+body{background:var(--sand);color:var(--ink);font-family:'Barlow',system-ui,sans-serif;line-height:1.6}
+/* full-screen video opener */
+#heroVideo{position:relative;width:100%;height:100svh;overflow:hidden;background:#000;z-index:1}
+#heroVideo .vposter{position:absolute;inset:0;z-index:0}#heroVideo .vposter img{width:100%;height:100%;object-fit:cover}#heroVideo .vframe{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100vw;height:56.25vw;min-height:100svh;min-width:177.78svh;pointer-events:none}
+#heroVideo iframe{width:100%;height:100%;border:0;display:block}
+#heroVideo .vtap{position:absolute;inset:0;z-index:2;cursor:pointer;background:transparent}
+#heroVideo .vhint{position:absolute;z-index:3;left:50%;bottom:22px;transform:translateX(-50%);font-family:'Barlow',sans-serif;font-size:.72rem;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.72);background:rgba(0,0,0,.28);padding:7px 14px;border-radius:999px;pointer-events:none;transition:opacity .4s ease}
+#heroVideo.is-muted .vhint-muted{display:inline}#heroVideo.is-muted .vhint-live{display:none}
+#heroVideo .vhint-muted{display:none}
+/* hide sticky brand bar while the video is on screen */
+header.nav{transition:opacity .4s ease,transform .4s ease}
+header.nav.nav--hidden{opacity:0;pointer-events:none;transform:translateY(-10px)}
+
   :root{
     --sand:#fbf4f0;
     --sand-deep:#e4d3cd;
@@ -449,6 +469,122 @@
     .features{gap:34px}
     .contact-cta{gap:18px}
   }
+
+
+/* ========== WARM EARTH THEME · reddish terracotta text, chaptered ========== */
+:root{
+  --sand:#dcab66; --sand-deep:#d2a052; --ink:#86300f;
+  --clay:#9c3d1a; --clay-deep:#9c3d1a; --brown:#86300f; --cream:#f7eedb;
+  --line:rgba(90,40,18,.22); --shadow:rgba(80,40,20,.20);
+}
+body{background:var(--sand);color:var(--ink)}
+header.nav{background:linear-gradient(180deg,rgba(220,171,102,.96),rgba(220,171,102,0));border-bottom:0}
+.brand,.brand small{color:var(--clay)}
+/* air between chapters */
+section.band{padding:94px 0}
+.band.alt{background:var(--sand-deep)}
+/* big headings, all in the reddish terracotta of the button */
+.sec-title{color:var(--clay);font-size:clamp(3.6rem,8.4vw,7rem);letter-spacing:1px;line-height:.98}
+.sec-sub{color:var(--brown)}
+.hero h1{color:var(--clay);font-size:clamp(3.8rem,13vw,8.4rem)}
+.hero-sub{color:var(--clay)}
+.book-card h3{font-size:clamp(2.7rem,6vw,4.6rem)}
+.book-card.b1 .eyebrow,.book-card.b1 h3{color:#a8443b}
+.book-card.b2 .eyebrow,.book-card.b2 h3{color:#2f6d86}
+.about .hi,.feature h4,.review .rtitle,.faq summary,.blog-card .btitle{color:var(--clay)}
+.about .hi{font-size:clamp(2.9rem,5.6vw,4rem)}
+.feature h4{font-size:2.15rem}.review .rtitle{font-size:2.2rem}.faq summary{font-size:2.15rem}.blog-card .btitle{font-size:1.85rem}
+.about p,.feature p,.review p,.contact-email{color:var(--brown)}
+/* warm light cards */
+.about .bio,.review,.faq details,.blog-card,.article{background:var(--cream);border-color:var(--line)}
+.feature .fimg{background:#fff;box-shadow:0 5px 14px var(--shadow)}
+.blog-card .bg{opacity:.15}.blog-card:hover .bg{opacity:.3}
+.review .stars{color:#c77a2e}
+/* buttons keep the reddish terracotta */
+.mail-btn,.contact-popup{background:var(--clay)}
+.mail-btn:hover{filter:brightness(1.08)}
+.contact-email a{color:var(--clay)}
+/* footer in the reddish terracotta */
+footer{background:var(--clay);color:#f6e6d6;border-top:0}
+footer .copy{color:#f1ddca}
+footer .socials a{background:rgba(255,255,255,.15)}
+footer .socials a:hover{background:rgba(255,255,255,.28)}
+footer .socials svg{fill:#f6e6d6}
+/* ---- About cube: fixed-size photo, text to the right and below ---- */
+.about{display:block;max-width:960px;margin:0 auto}
+.about .bio{background:var(--cream);border:1px solid var(--line);border-radius:22px;
+  padding:38px 42px;box-shadow:0 20px 50px var(--shadow)}
+.about .bio::after{content:"";display:block;clear:both}
+.about-portrait{float:left;width:300px;height:300px;object-fit:cover;border-radius:16px;
+  margin:8px 32px 16px 0;box-shadow:0 14px 30px var(--shadow)}
+.about .hi{margin-bottom:10px}
+@media(max-width:640px){
+  .about .bio{padding:26px 22px}
+  .about-portrait{float:none;display:block;width:240px;height:240px;margin:0 auto 22px}
+}
+/* ---- stronger, clearly-visible scroll entrances (scrollcraft reveals) ---- */
+[data-sc-in]{will-change:opacity,transform}
+/* MORE pronounced entrances, on individual elements */
+[data-sc-in]:not(.sc-in),[data-sc-stagger]>*:not(.sc-in){opacity:0;transform:translateY(48px) scale(.972)}
+.sc-in,[data-sc-stagger]>.sc-in{opacity:1!important;transform:none!important}
+.sec-title[data-sc-in]:not(.sc-in),.hero h1[data-sc-in]:not(.sc-in){transform:translateY(66px) scale(.985)}
+/* fail-safe: show everything if JS is blocked */
+html:not(.js) [data-sc-in],html:not(.js) [data-sc-stagger]>*{opacity:1!important;transform:none!important}
+
+
+/* ===== TERRACOTTA GROUND · white type · wheat CTA (final override) ===== */
+:root{
+  --sand:#9c3d1a; --sand-deep:#8d3414; --ink:#ffffff;
+  --clay:#f5deb3; --clay-deep:#ffffff; --brown:#f4e9dc; --cream:#87330f;
+  --line:rgba(245,222,179,.20); --shadow:rgba(0,0,0,.33);
+}
+body{background:var(--sand);color:#fff}
+header.nav{background:linear-gradient(180deg,rgba(156,61,26,.97),rgba(156,61,26,0))}
+.brand,.brand small{color:#fff}
+.sec-title,.hero h1,.hero-sub,.about .hi,.feature h4,.review .rtitle,.faq summary,.blog-card .btitle{color:#fff}
+.book-card.b1 .eyebrow,.book-card.b1 h3,.book-card.b2 .eyebrow,.book-card.b2 h3{color:#fff}
+.sec-sub,.about p,.feature p,.review p,.contact-email,.faq .fa{color:var(--brown)}
+.about .bio,.review,.faq details,.blog-card,.article{background:var(--cream);border-color:var(--line);color:#fff}
+.feature .fimg{background:#fff}
+.blog-card .bg{opacity:.2}.blog-card:hover .bg{opacity:.36}
+.review .stars{color:#f0c66e}
+/* wheat CTA that pops yet harmonises with the ground */
+.mail-btn,.contact-popup{background:#f5deb3}
+.mail-btn{color:#7a2e10;box-shadow:0 10px 26px rgba(0,0,0,.32)}
+.mail-btn svg{fill:#7a2e10}
+.mail-btn:hover{background:#f9e9cb;filter:none;transform:translateY(-2px)}
+.contact-popup .cp-main{color:#7a2e10}
+.contact-popup .cp-main svg{fill:#7a2e10}
+.contact-popup .cp-close{background:rgba(122,46,16,.22);color:#7a2e10}
+.contact-email a{color:#f5deb3}
+.faq summary::after{color:#f5deb3}
+footer{background:#842f11;color:#f4e9dc;border-top:0}
+footer .copy{color:#f1ddca}
+footer .socials a{background:rgba(245,222,179,.16)}
+footer .socials a:hover{background:rgba(245,222,179,.3)}
+footer .socials svg{fill:#f4e9dc}
+
+
+/* ===== WHEAT boxes + wheat for same-as-background sections (final) ===== */
+/* text boxes -> wheat with dark text, so they pop off the terracotta ground */
+.about .bio,.review,.blog-card,.article,.faq details{background:#f5deb3;border-color:rgba(122,46,16,.22);color:#5a2a12}
+.review .rtitle,.blog-card .btitle,.faq summary,.about .hi{color:#7a2e10}
+.review p,.about p,.faq .fa,.article p{color:#5a2a12}
+.review .stars{color:#c6791f}
+.faq summary::after{color:#7a2e10}
+.blog-card .bg{opacity:.12}.blog-card:hover .bg{opacity:.24}
+/* sections whose ground matched the background -> wheat ground, dark type */
+.band.alt{background:#f5deb3}
+.band.alt .sec-title,.band.alt .about .hi,.band.alt .feature h4{color:#7a2e10}
+.band.alt .sec-sub,.band.alt .feature p,.band.alt>.wrap>p,.band.alt .contact-email{color:#5a2a12}
+/* cards inside a wheat section -> near-white so they separate from the wheat */
+.band.alt .about .bio,.band.alt .review,.band.alt .faq details,.band.alt .blog-card,.band.alt .article{background:#fffdf6;border-color:rgba(122,46,16,.15)}
+/* the CTA inside a wheat section -> terracotta so it still pops */
+.band.alt .mail-btn{background:#9c3d1a;color:#fff}
+.band.alt .mail-btn svg{fill:#fff}
+.band.alt .mail-btn:hover{background:#86330f;transform:translateY(-2px)}
+.band.alt .contact-email a{color:#9c3d1a}
+
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-SHNM9NC6ZZ"></script>
@@ -461,6 +597,18 @@
 </head>
 <body>
 
+<!-- ================= VIDEO (first on entry, autoplay, mutes on scroll) ================= -->
+<section id="heroVideo" class="is-muted" aria-label="ZooArchaeology for Kids trailer">
+  <div class="vposter" aria-hidden="true"><img src="images/hero-excavation.jpg" alt=""></div>
+  <div class="vframe">
+    <iframe id="heroVideoFrame"
+      src="https://www.youtube.com/embed/mF5PBV6xM4s?autoplay=1&mute=1&playsinline=1&loop=1&playlist=mF5PBV6xM4s&controls=0&rel=0&modestbranding=1&enablejsapi=1"
+      title="ZooArchaeology for Kids trailer"
+      allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <div class="vtap" id="heroVideoTap" aria-hidden="true"></div>
+</section>
+
 <!-- ================= NAV ================= -->
 <header class="nav">
   <div class="nav-inner">
@@ -470,17 +618,11 @@
 
 <!-- ================= HERO ================= -->
 <div class="hero">
-  <h1>ZooArchaeology for Kids</h1>
+  <h1 data-sc-in>ZooArchaeology for Kids</h1>
   <p class="hero-sub">A Book Series by Dr. Linoy Namdar</p>
 </div>
-<div class="video-wrap">
-  <div class="frame">
-    <iframe src="https://www.youtube.com/embed/mF5PBV6xM4s?autoplay=1&mute=1&playsinline=1&rel=0" title="ZooArchaeology for Kids" allow="autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  </div>
-</div>
-
 <!-- ================= BOOKS ================= -->
-<section id="books" class="books" style="padding-top:40px">
+<section id="books" class="books" data-sc-in data-sc-stagger="130" style="padding-top:40px">
   <div class="book-card b1">
     <span class="eyebrow">Book I</span>
     <h3>HUNTER-GATHERERS AND WILD SPECIES</h3>
@@ -491,8 +633,8 @@
   </div>
 </section>
 
-<div class="hero-banner" style="margin-top:18px">
-  <img src="images/hero-excavation.jpg" alt="Both ZooArchaeology for Kids books laid on an excavation site with archaeology tools">
+<div class="hero-banner" data-sc-act="flow" style="margin-top:18px">
+  <img data-sc-reveal="up" data-sc-reveal-at="0.06 0.58" src="images/hero-excavation.jpg" alt="Both ZooArchaeology for Kids books laid on an excavation site with archaeology tools">
 </div>
 
 <!-- ================= INSIDE THE BOOKS ================= -->
@@ -516,12 +658,12 @@
 </section>
 
 <!-- ================= ABOUT ================= -->
-<section id="about" class="band alt">
+<section id="about" class="band alt" data-sc-act="flow">
   <div class="wrap">
     <div class="about">
-      <img src="images/author-headshot.jpg" alt="Dr. Linoy Namdar">
       <div class="bio">
-        <p class="hi">About the Author</p>
+        <img class="about-portrait" data-sc-reveal="left" data-sc-reveal-at="0.08 0.6" src="images/author-headshot.jpg" alt="Dr. Linoy Namdar">
+        <p class="hi" data-sc-in>About the Author</p>
         <p>I'm Dr. Linoy Namdar, an archaeologist specializing in Zooarchaeology, exploring the fascinating bond between humans and animals in the ancient world.</p>
         <p>I am a research fellow in the Eötvös Loránd University (ELTE), Hungary under the Momentum MSCA Postdoctoral Fellowship. My research focus on the animals' role as products in shaping long-distance interactions between Copper Age communities in the Carpathian Basin.</p>
         <p>In 2024, I embarked on a new adventure, writing and designing a children's book series called ZooArchaeology for Kids. These educational books are my way of sharing the captivating stories of human and animals connections throughout archaeological history with young (and young-at-heart!) readers. The books are sold here on this website, and in selected museum shops. For any questions, you are welcome to send me a message via the Contact section.</p>
@@ -534,10 +676,10 @@
 <!-- ================= WHY UNIQUE ================= -->
 <section id="why" class="band">
   <div class="wrap">
-    <h2 class="sec-title">WHY ARE MY BOOKS UNIQUE?</h2>
-    <div class="features">
+    <h2 class="sec-title" data-sc-in>WHY ARE MY BOOKS UNIQUE?</h2>
+    <div class="features" data-sc-in data-sc-stagger="90">
       <div class="feature">
-        <div class="fimg"><img src="images/feat-science.png" alt="Deer skull and bones excavation illustration" loading="lazy"></div>
+        <div class="fimg"><img src="images/feat-science.jpg" alt="Deer skull and bones excavation illustration" loading="lazy"></div>
         <div class="ftext">
           <h4>A Unique Focus on Real Science</h4>
           <p>The books uniquely introduces children to zooarchaeology, a specialized field that studies ancient animals and humans through the bones we found in the excavations.</p>
@@ -551,28 +693,28 @@
         </div>
       </div>
       <div class="feature">
-        <div class="fimg"><img src="images/book-covers-both.png" alt="ZooArchaeology for Kids book series — Book I and Book II" loading="lazy"></div>
+        <div class="fimg"><img src="images/book-covers-both.jpg" alt="ZooArchaeology for Kids book series — Book I and Book II" loading="lazy"></div>
         <div class="ftext">
           <h4>Comprehensive Historical Scope</h4>
           <p>The books delves into pivotal periods: Book 1: Hunter-gatherers and Wild Species explores prehistoric times.   Book 2: The Neolithic Revolution uncovers the significant transition to farming and animal domestication.</p>
         </div>
       </div>
       <div class="feature">
-        <div class="fimg"><img src="images/feat-education.png" alt="Deer skeleton anatomical illustration" loading="lazy"></div>
+        <div class="fimg"><img src="images/feat-education.jpg" alt="Deer skeleton anatomical illustration" loading="lazy"></div>
         <div class="ftext">
           <h4>Expert-Vetted Education including anatomical atlas and activity pages</h4>
           <p>Learn about the skeletal elements and the differences between carnivores, herbivores, omnivores. Including anatomical atlas and activity pages.</p>
         </div>
       </div>
       <div class="feature">
-        <div class="fimg"><img src="images/feat-visuals.png" alt="Farm animals illustration" loading="lazy"></div>
+        <div class="fimg"><img src="images/feat-visuals.jpg" alt="Farm animals illustration" loading="lazy"></div>
         <div class="ftext">
           <h4>Engaging Visuals fit for ages 6-16</h4>
           <p>The books' illustrations depict both complete skeletons and living animals. This allows children to easily connect ancient remains with the creatures they once were, making complex topics accessible and exciting.</p>
         </div>
       </div>
       <div class="feature">
-        <div class="fimg"><img src="images/feat-gift.png" alt="Archaeological bookmark and postcard gift set" loading="lazy"></div>
+        <div class="fimg"><img src="images/feat-gift.jpg" alt="Archaeological bookmark and postcard gift set" loading="lazy"></div>
         <div class="ftext">
           <h4>Includes a Special Gift Set</h4>
           <p>Receive a unique archaeological bookmark and a beautiful postcard, both designed by Dr. Namdar.</p>
@@ -585,7 +727,7 @@
 <!-- ================= CONTACT (before museums) ================= -->
 <section class="band">
   <div class="wrap">
-    <h2 class="sec-title">Contact me to order the books now!</h2>
+    <h2 class="sec-title" data-sc-in>Contact me to order the books now!</h2>
     <div class="contact-cta">
       <a class="mail-btn" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=na.zooarch@gmail.com&amp;su=Book%20Order%20%E2%80%93%20ZooArchaeology%20for%20Kids&amp;body=Hi%20Dr.%20Namdar%2C%0A%0AI'd%20like%20to%20order%3A%0A-%20Book%20I%3A%20Hunter-Gatherers%20%26%20Wild%20Species%0A-%20Book%20II%3A%20The%20Neolithic%20Revolution%0A%0AShipping%20address%3A%0A%0AThank%20you!" target="_blank" rel="noopener" aria-label="Contact me by email">
         <svg viewBox="0 0 24 24"><path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"/></svg>
@@ -599,9 +741,9 @@
 <!-- ================= MUSEUMS ================= -->
 <section class="band alt">
   <div class="wrap">
-    <h2 class="sec-title">also available in selected museum shops</h2>
+    <h2 class="sec-title" data-sc-in>also available in selected museum shops</h2>
     <div class="museums">
-      <img src="images/museums-logos.png?v=3" alt="Available in museum shops: Haifa Museums Shops, National Maritime Museum, Haifa Museums, Steinhardt Museum of Natural History (Tel Aviv), and the Natural History Museum Vienna (Naturhistorisches Museum Wien)">
+      <img data-sc-reveal="up" data-sc-reveal-at="0.08 0.6" src="images/museums-logos.jpg" alt="Available in museum shops: Haifa Museums Shops, National Maritime Museum, Haifa Museums, Steinhardt Museum of Natural History (Tel Aviv), and the Natural History Museum Vienna (Naturhistorisches Museum Wien)">
     </div>
   </div>
 </section>
@@ -609,8 +751,8 @@
 <!-- ================= REVIEWS ================= -->
 <section class="band">
   <div class="wrap">
-    <h2 class="sec-title">What Readers Say</h2>
-    <div class="reviews">
+    <h2 class="sec-title" data-sc-in>What Readers Say</h2>
+    <div class="reviews" data-sc-in data-sc-stagger="90">
       <div class="review">
         <div class="stars">★★★★★</div>
         <div class="rtitle">Great books as gift</div>
@@ -639,43 +781,30 @@
   </div>
 </section>
 
-<!-- ================= CONTACT / ORDER ================= -->
-<section id="contact" class="band alt">
-  <div class="wrap">
-    <h2 class="sec-title">Contact me to order the books now!</h2>
-    <div class="contact-cta">
-      <a class="mail-btn" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=na.zooarch@gmail.com&amp;su=Book%20Order%20%E2%80%93%20ZooArchaeology%20for%20Kids&amp;body=Hi%20Dr.%20Namdar%2C%0A%0AI'd%20like%20to%20order%3A%0A-%20Book%20I%3A%20Hunter-Gatherers%20%26%20Wild%20Species%0A-%20Book%20II%3A%20The%20Neolithic%20Revolution%0A%0AShipping%20address%3A%0A%0AThank%20you!" target="_blank" rel="noopener" aria-label="Contact me by email">
-        <svg viewBox="0 0 24 24"><path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"/></svg>
-        Contact me
-      </a>
-    </div>
-    <p class="contact-email">or email <a href="mailto:na.zooarch@gmail.com">na.zooarch@gmail.com</a></p>
-  </div>
-</section>
 
 <!-- ================= BLOG ================= -->
 <section id="blog" class="band">
   <div class="wrap">
-    <h2 class="sec-title">academic articles for kids</h2>
-    <div class="blog-grid">
+    <h2 class="sec-title" data-sc-in>academic articles for kids</h2>
+    <div class="blog-grid" data-sc-in data-sc-stagger="80">
       <a class="blog-card" href="blog/cows-plow.html" target="_blank" rel="noopener">
-        <div class="bg" style="background-image:url('images/blog-cows-plow.png')"></div>
+        <div class="bg" style="background-image:url('images/blog-cows-plow.jpg')"></div>
         <div class="btitle">Why Did Ancient Farmers Start Using Cows to Plow Fields?</div>
       </a>
       <a class="blog-card" href="blog/animal-age.html" target="_blank" rel="noopener">
-        <div class="bg" style="background-image:url('images/blog-animal-age.png')"></div>
+        <div class="bg" style="background-image:url('images/blog-animal-age.jpg')"></div>
         <div class="btitle">How Do Zooarchaeologists Know How Old an Animal Was When It Died?</div>
       </a>
       <a class="blog-card" href="blog/cows-milk.html" target="_blank" rel="noopener">
-        <div class="bg" style="background-image:url('images/blog-cows-milk.png')"></div>
+        <div class="bg" style="background-image:url('images/blog-cows-milk.jpg')"></div>
         <div class="btitle">Did Ancient People Know That Cows Could Give Milk?</div>
       </a>
       <a class="blog-card" href="blog/earthquake.html" target="_blank" rel="noopener">
-        <div class="bg" style="background-image:url('images/blog-earthquake.png')"></div>
+        <div class="bg" style="background-image:url('images/blog-earthquake.jpg')"></div>
         <div class="btitle">The Earthquake That Froze a Goat Herd in Time</div>
       </a>
       <a class="blog-card" href="blog/bones-dinner.html" target="_blank" rel="noopener">
-        <div class="bg" style="background-image:url('images/blog-bones-dinner.png')"></div>
+        <div class="bg" style="background-image:url('images/blog-bones-dinner.jpg')"></div>
         <div class="btitle">What Do Ancient Bones Tell Us About What People Ate for Dinner?</div>
       </a>
     </div>
@@ -685,8 +814,8 @@
 <!-- ================= FAQ ================= -->
 <section id="faq" class="band alt">
   <div class="wrap">
-    <h2 class="sec-title">Frequently Asked Questions</h2>
-    <div class="faq">
+    <h2 class="sec-title" data-sc-in>Frequently Asked Questions</h2>
+    <div class="faq" data-sc-in data-sc-stagger="70">
       <details>
         <summary>What is ZooArchaeology for Kids?</summary>
         <p class="fa">ZooArchaeology for Kids is a children's book series that introduces young readers ages 6–16 to zooarchaeology — the study of ancient humans and animals through the bones found in archaeological excavations.</p>
@@ -739,6 +868,20 @@
   ]
 }
 </script>
+
+<!-- ================= CONTACT / ORDER (after FAQ) ================= -->
+<section id="contact" class="band alt">
+  <div class="wrap">
+    <h2 class="sec-title" data-sc-in>Contact me to order the books now!</h2>
+    <div class="contact-cta">
+      <a class="mail-btn" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=na.zooarch@gmail.com&amp;su=Book%20Order%20%E2%80%93%20ZooArchaeology%20for%20Kids&amp;body=Hi%20Dr.%20Namdar%2C%0A%0AI'd%20like%20to%20order%3A%0A-%20Book%20I%3A%20Hunter-Gatherers%20%26%20Wild%20Species%0A-%20Book%20II%3A%20The%20Neolithic%20Revolution%0A%0AShipping%20address%3A%0A%0AThank%20you!" target="_blank" rel="noopener" aria-label="Contact me by email">
+        <svg viewBox="0 0 24 24"><path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"/></svg>
+        Contact me
+      </a>
+    </div>
+    <p class="contact-email">or email <a href="mailto:na.zooarch@gmail.com">na.zooarch@gmail.com</a></p>
+  </div>
+</section>
 
 <!-- ================= FOOTER ================= -->
 <footer>
@@ -799,5 +942,32 @@
   });
 })();
 </script>
+
+<script src="scrollcraft.js"></script>
+<script>
+  if(window.ScrollCraft) ScrollCraft.mount(document.body);
+  (function(){
+    var sec=document.getElementById('heroVideo');
+    var fr=document.getElementById('heroVideoFrame');
+    var nav=document.querySelector('header.nav');
+    function yt(func){ try{ fr.contentWindow.postMessage(JSON.stringify({event:'command',func:func,args:[]}),'*'); }catch(e){} }
+    var soundOn=false;
+    function setMuted(m){ sec.classList.toggle('is-muted', m); }
+    // click the video to toggle sound
+    document.getElementById('heroVideoTap').addEventListener('click',function(){
+      soundOn=!soundOn; if(soundOn){ yt('unMute'); yt('playVideo'); } else { yt('mute'); } setMuted(!soundOn);
+    });
+    // autoplay, and mute+pause when the video scrolls out of view; resume (muted) when back
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(es){ es.forEach(function(e){
+        if(e.intersectionRatio>0.5){ nav&&nav.classList.add('nav--hidden'); yt('playVideo'); if(soundOn) yt('unMute'); }
+        else { nav&&nav.classList.remove('nav--hidden'); yt('mute'); yt('pauseVideo'); soundOn=false; setMuted(true); }
+      }); },{threshold:[0,0.5,1]}).observe(sec);
+    }
+    // start with nav hidden over the hero
+    nav&&nav.classList.add('nav--hidden');
+  })();
+</script>
+
 </body>
 </html>
